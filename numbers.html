@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Numbers</title>
+</head>
+<body>
+    <script>
+        //*************************=== Check Positive Number ===************************
+        function checkPositivePrimeNumber(number) {
+            if (number > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        //*************************=== Check Prime Number ===************************
+        function isPrime(number) {
+            if (number < 2) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        //*************************=== Input Number ===************************
+        function numbersFromInput() {
+            let primeCheck;
+            let inputNumber;
+            let isValidInput = false;
+            while (!isValidInput) {
+                inputNumber = prompt("Enter a positive number:");
+                isValidInput = checkPositivePrimeNumber(inputNumber);
+                if (isValidInput === true){
+                    primeCheck = isPrime(inputNumber);
+                }
+                if (!isValidInput) {
+                    alert("Invalid input. Please enter a positive number.");
+                }
+            }
+            if (primeCheck === true){
+                document.write("Your input number is " + inputNumber + " which is positive prime number so result is: "+primeCheck);
+                console.log("Your input number is " + inputNumber + " which is positive prime number so result is: "+primeCheck);
+            }else{
+                document.write("Your input number is " + inputNumber + " which is positive but not prime number so result is: "+primeCheck);
+                console.log("Your input number is " + inputNumber + " which is positive but not prime number so result is: "+primeCheck);
+            }            
+        }
+        numbersFromInput(); 
+        
+    </script>
+</body>
+</html>

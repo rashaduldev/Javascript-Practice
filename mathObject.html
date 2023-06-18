@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Object</title>
+</head>
+<body>
+    <script>
+        function sumOfSquares(numbers) {
+            const sumOfSquares = numbers.reduce((sum, num) => sum + Math.pow(num, 2), 0);
+            const squareRoot = Math.sqrt(sumOfSquares);
+            return squareRoot;
+        }
+        //*************************=== Question No a ===************************
+        function numbersFromInput() {
+            const inputNumbers = [];
+            while (true) {
+                const input = prompt("Enter a valid number (or write 'done' to finish):");
+                if (input === "done") {
+                    break; // Exit the loop if the user enters "done"
+                }
+                const takeNumber = parseFloat(input);
+                if (!isNaN(takeNumber)) {
+                    inputNumbers.push(takeNumber); // Add the valid number to the array
+                }
+            }
+            const inputNumbersResult = sumOfSquares(inputNumbers);
+            document.write("result of question no a  "+inputNumbersResult);
+            console.log("result of question no a  "+inputNumbersResult);
+        }
+        numbersFromInput();
+        //*************************=== Question No b ===************************
+        // Example usage
+        const fixedNumbers = [1, 2, 3, 4, 5];
+        const fixedNumbersResult = sumOfSquares(fixedNumbers);
+        document.write("<br>"+"result of question no b  "+fixedNumbersResult);
+        console.log("result of question no b  "+fixedNumbersResult);
+
+    </script>
+</body>
+</html>
