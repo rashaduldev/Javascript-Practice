@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigator Object</title>
+</head>
+<body>
+<h3 id="browserName"></h3>
+<h3 id="browserVersion"></h3>
+<p id="fullDetails"></p>
+<script>
+    //I have specified for some popular browser to get the proper browser name using switch case.
+    function getBrowserInfo() {
+        const userAgent = navigator.userAgent;
+        let browserName, browserVersion; 
+        switch (true) {
+            case userAgent.includes('Firefox'):
+                browserName = 'Firefox';
+                browserVersion = userAgent.substring(userAgent.indexOf('Firefox') + 8);
+                break;
+            case userAgent.includes('Chrome'):
+                browserName = 'Chrome';
+                browserVersion = userAgent.substring(userAgent.indexOf('Chrome') + 7);
+                break;
+            case userAgent.includes('Safari'):
+                browserName = 'Safari';
+                browserVersion = userAgent.substring(userAgent.indexOf('Version') + 8);
+                break;
+            case userAgent.includes('MSIE') || userAgent.includes('Trident/'):
+                browserName = 'Internet Explorer';
+                browserVersion = userAgent.substring(userAgent.indexOf('MSIE') + 5, userAgent.indexOf(';'));
+                break;
+            default:
+                browserName = 'Unknown';
+                browserVersion = 'Unknown';
+        }
+        return {
+            name: browserName,
+            version: browserVersion,
+        };
+    }
+    const browserInfo = getBrowserInfo(); 
+    document.getElementById('browserName').innerText ='Browser Name: '+ browserInfo.name;
+    document.getElementById('browserVersion').innerText ='Browser Version: '+ browserInfo.version;
+    document.getElementById('fullDetails').innerText=navigator.userAgent; 
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button and Paragraph Example</title>
+</head>
+<body>
+<button id="myButton">Click Me</button>
+<p id="myParagraph">This is a paragraph.</p>
+
+<script>
+    const button = document.getElementById('myButton');
+    const paragraph = document.getElementById('myParagraph');
+
+    button.addEventListener('click', function() {
+        paragraph.textContent = 'Button clicked!';
+    });
+</script>
+</body>
+</html>
