@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Query Selector</title>
+</head>
+<body>
+    <p class="red-text">This paragraph has the class "red-text".</p>
+    <p class="red">This is a regular paragraph.</p>
+    <p id="special-paragraph">This paragraph has the ID "special-paragraph".</p>
+    <p class="red-text">Another paragraph with the class "red-text".</p>
+    <button onclick="changeTextColor()">Change Text Color</button>
+    
+    <script>
+        function changeTextColor() {
+            const paragraphs = document.querySelectorAll('.red-text');
+            for (let paragraph of paragraphs){
+                paragraph.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

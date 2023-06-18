@@ -34,6 +34,7 @@
 </body>
 </html>-->
 
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,5 +56,28 @@
 </script>
 </body>
 </html>
+-->
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button and Image Example</title>
+</head>
+<body>
+<button id="myButton">Click to Change Image src</button>
+<br>
+<br>
+<img id="myImage" src="https://via.placeholder.com/300" alt="Original Image">
+
+<script>
+    const button = document.getElementById('myButton');
+    const image = document.getElementById('myImage');
+
+    button.addEventListener('click', function() {
+        image.src = 'https://source.unsplash.com/random/800x600';
+    });
+</script>
+</body>
+</html>

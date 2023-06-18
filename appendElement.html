@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamically Create List Items</title>
+</head>
+<body>
+<button onclick="createListItems()">Click to generate unordered list </button>
+<ul id="myList"></ul>
+
+<script>
+    function checkPositivePrimeNumber(number) {
+        if (number > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function createListItems() { 
+        let inputNumber;
+        let isValidInput = false;
+        while (!isValidInput) {
+            inputNumber = prompt("Enter a positive number to generate unordered list:");
+            isValidInput = checkPositivePrimeNumber(inputNumber);
+            if (!isValidInput) {
+                alert("Invalid input. Please enter a positive number.");
+            }
+        }
+        const ul = document.getElementById('myList');
+        for (let i = 1; i <= inputNumber; i++) {
+            const li = document.createElement('li');
+            li.textContent = i;
+            ul.appendChild(li);
+        }
+    }
+</script>
+</body>
+</html>
