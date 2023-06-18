@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window Object</title>
+</head>
+<body>
+    <button onclick="openNewWindow('https://www.example.com', 800, 600)">Open New Window</button>
+    <script>
+        function openNewWindow(url, width, height) { 
+            const left = (window.innerWidth - width) / 2;
+            const top = (window.innerHeight - height) / 2; 
+            const options = `width=${width},height=${height},top=${top},left=${left}`;
+            window.open(url, '_blank', options);
+        } 
+    </script>
+</body>
+</html>
