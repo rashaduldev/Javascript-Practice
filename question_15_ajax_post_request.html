@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Post Request</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<script>
+    async function sendPostRequest() {
+        let url = "https://api.example.com/submit";
+        let data = {
+            name: "John Doe",
+            email: "johndoe@example.com"
+        };
+        try {
+            let res = await axios.post(url, data);
+            console.log("POST request succeeded!");
+        } catch (error) {
+            console.error("POST request failed:", error);
+        }
+    }
+    sendPostRequest();
+</script>
+</body>
+</html>

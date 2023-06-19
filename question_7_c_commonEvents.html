@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Hover Example</title>
+</head>
+<body>
+<img id="myImage" src="https://via.placeholder.com/300" alt="Original Image">
+<script>
+    const image = document.getElementById('myImage');
+    const originalSrc = image.src;
+
+    image.addEventListener('mouseover', function() {
+        image.src = 'https://source.unsplash.com/random/800x600';
+    });
+    image.addEventListener('mouseout', function() {
+        image.src = originalSrc;
+    });
+</script>
+</body>
+</html>

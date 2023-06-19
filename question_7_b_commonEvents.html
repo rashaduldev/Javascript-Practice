@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Key Code Example</title>
+</head>
+<body>
+<h1>Click anywhere in the display then press any key from the keyboard to get an alert with the key code of the pressed key</h1>
+<script>
+    document.addEventListener('keydown', function(event) {
+        const keyCode = event.keyCode || event.which;
+        alert('Key Code: ' + keyCode);
+    });
+</script>
+</body>
+</html>
